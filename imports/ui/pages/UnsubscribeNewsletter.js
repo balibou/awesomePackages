@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Container, Hero, HeroBody, Title } from 're-bulma'
 import { deleteEmail } from '../../api/emails/methods'
 
 class UnsubscribeNewsletter extends Component {
@@ -20,10 +21,20 @@ class UnsubscribeNewsletter extends Component {
   render () {
     return (
       <div className='UnsubscribeNewsletter'>
-        {this.state.value
-        ? <p>You have been unsubscribed of the newsletter</p>
-        : <p>This email has already been unsubscribed</p>
-        }
+        <Hero color='isPrimary'>
+          <HeroBody>
+            <Container hasTextCentered>
+              <Title size='is4'>
+                <strong>
+                  {this.state.value
+                  ? 'You have been unsubscribed of the newsletter'
+                  : 'This email has already been unsubscribed'
+                  }
+                </strong>
+              </Title>
+            </Container>
+          </HeroBody>
+        </Hero>
       </div>
     )
   }

@@ -1,5 +1,6 @@
 /* global Meteor:true */
 import React, { Component } from 'react'
+import { Container, Hero, HeroBody, Columns, Column, Title, Group, Button, Input } from 're-bulma'
 import { insertEmail } from '../../api/emails/methods'
 
 class SubscribeNewsletter extends Component {
@@ -30,11 +31,25 @@ class SubscribeNewsletter extends Component {
   render () {
     return (
       <div className='SubscribeNewsletter'>
-        <form
-          onSubmit={this.submitEmail}>
-          <input name='email' type='email' value={this.state.value} onChange={this.handleEmailChange} placeholder='Your email' />
-          <button>Subscribe</button>
-        </form>
+        <Hero color='isPrimary'>
+          <HeroBody>
+            <Container>
+              <Columns>
+                <Column size='isOneThird'>
+                  <Title size='is3'>Awesome <strong>Newsletter</strong> !</Title>
+                </Column>
+                <Column>
+                  <form onSubmit={this.submitEmail}>
+                    <Group>
+                      <Input name='email' type='email' value={this.state.value} onChange={this.handleEmailChange} placeholder='email address' isExpanded />
+                      <Button type='submit' color='isWhite' buttonStyle='isOutlined'>Subscribe</Button>
+                    </Group>
+                  </form>
+                </Column>
+              </Columns>
+            </Container>
+          </HeroBody>
+        </Hero>
       </div>
     )
   }

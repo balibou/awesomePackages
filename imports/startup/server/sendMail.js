@@ -1,7 +1,7 @@
 /* global Meteor Email SSR check Assets:true */
 import cloudinary from 'cloudinary'
 
-process.env.MAIL_URL = Meteor.settings.MAIL_URL
+process.env.MAIL_URL = process.env.MAIL_URL || Meteor.settings.MAIL_URL
 const emailData = {
   twitterLogo: cloudinary.url('twitter_mvjn8k.png'),
   facebookLogo: cloudinary.url('facebook_uczxnv.png')

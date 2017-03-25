@@ -1,6 +1,6 @@
+/* global Meteor Email SSR check Assets:true */
 import cloudinary from 'cloudinary'
 
-/* global Meteor Email SSR Assets:true */
 process.env.MAIL_URL = Meteor.settings.MAIL_URL
 const emailData = {
   twitterLogo: cloudinary.url('twitter_mvjn8k.png'),
@@ -13,3 +13,16 @@ SSR.compileTemplate('htmlEmail', Assets.getText('html-email.html'))
 //   subject: 'Welcome to AwesomePackages !',
 //   html: SSR.render('htmlEmail', emailData)
 // })
+
+Meteor.methods({
+  sendEmail: function (to) {
+    check([to], [String])
+    this.unblock()
+    // Email.send({
+    //   to: 'benjamin.cherion@gmail.com',
+    //   from: 'support@awesomepackages.com',
+    //   subject: 'Welcome to AwesomePackages !',
+    //   html: SSR.render('htmlEmail', emailData)
+    // })
+  }
+})

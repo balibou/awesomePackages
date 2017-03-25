@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { insertEmail } from '../../api/emails/methods'
+import { insertEmail, sendEmail } from '../../api/emails/methods'
 
 class SubscribeNewsletter extends Component {
   constructor (props) {
@@ -20,6 +20,7 @@ class SubscribeNewsletter extends Component {
       if (error) {
         console.log(error.reason)
       } else {
+        Meteor.call('sendEmail', email)
         this.setState({value: ''})
       }
     })

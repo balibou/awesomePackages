@@ -5,6 +5,7 @@ import { Meteor } from 'meteor/meteor'
 import App from '../../ui/layouts/App.js'
 import Index from '../../ui/pages/Index.js'
 import NotFound from '../../ui/pages/NotFound'
+import UnsubscribeNewsletter from '../../ui/pages/UnsubscribeNewsletter'
 
 Meteor.startup(() => {
   render(
@@ -12,6 +13,7 @@ Meteor.startup(() => {
       <App>
         <Switch>
           <Route exact path='/' component={Index} />
+          <Route exact path='/unsubscribe/:id' component={UnsubscribeNewsletter} />
           <Route component={NotFound} />
         </Switch>
       </App>

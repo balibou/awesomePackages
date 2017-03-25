@@ -18,9 +18,20 @@ export const insertEmail = new ValidatedMethod({
   }
 })
 
+export const deleteEmail = new ValidatedMethod({
+  name: 'Emails.delete',
+  validate: new SimpleSchema({
+    _id: { type: String, optional: true }
+  }).validator(),
+  run ({_id}) {
+    return Emails.remove(_id)
+  }
+})
+
 rateLimit({
   methods: [
-    insertEmail
+    insertEmail,
+    deleteEmail
   ],
   limit: 5,
   timeRange: 1000

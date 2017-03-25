@@ -1,5 +1,6 @@
+/* global Meteor:true */
 import React, { Component } from 'react'
-import { insertEmail, sendEmail } from '../../api/emails/methods'
+import { insertEmail } from '../../api/emails/methods'
 
 class SubscribeNewsletter extends Component {
   constructor (props) {
@@ -16,11 +17,11 @@ class SubscribeNewsletter extends Component {
   submitEmail (e) {
     e.preventDefault()
     const email = this.state.value
-    insertEmail.call({email}, (error, response) => {
+    insertEmail.call({email}, (error, emailId) => {
       if (error) {
-        console.log(error.reason)
+        // console.log(error.reason)
       } else {
-        Meteor.call('sendEmail', email)
+        Meteor.call('sendEmail', email, emailId)
         this.setState({value: ''})
       }
     })

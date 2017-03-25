@@ -12,7 +12,6 @@ class UnsubscribeNewsletter extends Component {
     const emailId = this.props.match.params.id
     deleteEmail.call({_id: emailId}, (error, response) => {
       if (error) {
-        // console.log(error.reason)
       } else {
         this.setState({value: response})
       }

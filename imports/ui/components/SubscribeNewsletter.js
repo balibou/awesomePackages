@@ -1,5 +1,6 @@
 /* global Meteor:true */
 import React, { Component } from 'react'
+import { Bert } from 'meteor/themeteorchef:bert'
 import { Container, Hero, HeroBody, Columns, Column, Title, Group, Button, Input } from 're-bulma'
 import { insertEmail } from '../../api/emails/methods'
 
@@ -18,11 +19,13 @@ class SubscribeNewsletter extends Component {
   submitEmail (e) {
     e.preventDefault()
     const email = this.state.value
+    if (!email) return Bert.alert('No email in the input field', 'warning')
     insertEmail.call({email}, (error, emailId) => {
       if (error) {
-        // console.log(error.reason)
+        Bert.alert(error.reason, 'danger')
       } else {
         Meteor.call('sendEmail', email, emailId)
+        Bert.alert('Your email is subscribed !', 'success')
         this.setState({value: ''})
       }
     })

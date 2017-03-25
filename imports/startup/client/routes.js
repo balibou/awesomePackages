@@ -1,17 +1,19 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route } from 'react-router'
-import createBrowserHistory from 'history/createBrowserHistory'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Meteor } from 'meteor/meteor'
 import App from '../../ui/layouts/App.js'
 import Index from '../../ui/pages/Index.js'
+import NotFound from '../../ui/pages/NotFound'
 
 Meteor.startup(() => {
-  const history = createBrowserHistory()
   render(
-    <Router history={history}>
+    <Router>
       <App>
-        <Route exact path='/' component={Index} />
+        <Switch>
+          <Route exact path='/' component={Index} />
+          <Route component={NotFound} />
+        </Switch>
       </App>
     </Router>,
     document.getElementById('react-root')

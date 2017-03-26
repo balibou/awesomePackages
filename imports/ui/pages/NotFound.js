@@ -1,17 +1,16 @@
 import React from 'react'
-import { Container, Hero, HeroBody, Title } from 're-bulma'
 
 const NotFound = () => (
   <div className='NotFound'>
-    <Hero color='isPrimary'>
-      <HeroBody>
-        <Container hasTextCentered>
-          <Title size='is4'>
+    <section className='hero is-primary'>
+      <div className='hero-body' style={{padding: '35px 20px'}}>
+        <div className='container has-text-centered'>
+          <p className='subtitle'>
             <strong>Page not found</strong>
-          </Title>
-        </Container>
-      </HeroBody>
-    </Hero>
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
 )
 

@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Nav, NavGroup, NavItem } from 're-bulma'
 
 const AppNavigation = () => (
-  <Nav>
-    <NavGroup align='left'>
-      <NavItem>
+  <nav className='nav'>
+    <div className='nav-left'>
+      <div className='nav-item'>
         <Link to='/'>Awesome Packages</Link>
-      </NavItem>
-    </NavGroup>
-  </Nav>
+      </div>
+    </div>
+  </nav>
 )
 
 export default AppNavigation

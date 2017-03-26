@@ -1,7 +1,6 @@
 /* global Meteor:true */
 import React, { Component } from 'react'
 import { Bert } from 'meteor/themeteorchef:bert'
-import { Container, Hero, HeroBody, Columns, Column, Title, Group, Button, Input } from 're-bulma'
 import { insertEmail } from '../../api/emails/methods'
 
 class SubscribeNewsletter extends Component {
@@ -34,25 +33,34 @@ class SubscribeNewsletter extends Component {
   render () {
     return (
       <div className='SubscribeNewsletter'>
-        <Hero color='isPrimary'>
-          <HeroBody>
-            <Container>
-              <Columns>
-                <Column size='isOneThird'>
-                  <Title size='is3'>Awesome <strong>Newsletter</strong> !</Title>
-                </Column>
-                <Column>
+        <section className='hero is-primary'>
+          <div className='hero-body' style={{padding: '35px 20px'}}>
+            <div className='container'>
+              <div className='columns'>
+                <div className='column is-one-third is-left'>
+                  <p className='title'>
+                    Awesome <strong>Newsletter</strong> !
+                  </p>
+                </div>
+                <div className='column'>
                   <form onSubmit={this.submitEmail}>
-                    <Group>
-                      <Input name='email' type='email' value={this.state.value} onChange={this.handleEmailChange} placeholder='email address' isExpanded />
-                      <Button type='submit' color='isWhite' buttonStyle='isOutlined'>Subscribe</Button>
-                    </Group>
+                    <div className='field is-grouped'>
+                      <div className='control has-icon is-expanded'>
+                        <input className='input is-flat required email' name='email' type='email' placeholder='email address' value={this.state.value} onChange={this.handleEmailChange} required />
+                        <span className='icon is-small'>
+                          <i className='fa fa-envelope' />
+                        </span>
+                      </div>
+                      <div className='control'>
+                        <input className='button is-white is-outlined' type='submit' value='Subscribe' name='subscribe' />
+                      </div>
+                    </div>
                   </form>
-                </Column>
-              </Columns>
-            </Container>
-          </HeroBody>
-        </Hero>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     )
   }

@@ -30,3 +30,6 @@ ddp-rate-limiter
 check
 fortawesome:fontawesome
 themeteorchef:bert
+accounts-github
+github-config-ui
+accounts-ui-unstyled

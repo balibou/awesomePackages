@@ -1,3 +1,7 @@
+accounts-base@1.2.14
+accounts-github@1.2.0
+accounts-oauth@1.1.15
+accounts-ui-unstyled@1.2.0
 aldeed:collection2@2.10.0
 aldeed:collection2-core@1.2.0
 aldeed:schema-deny@1.1.0
@@ -35,6 +39,8 @@ fastclick@1.0.13
 fortawesome:fontawesome@4.7.0
 fourseven:scss@4.5.0
 geojson-utils@1.0.10
+github-config-ui@1.0.0
+github-oauth@1.2.0
 hot-code-push@1.0.4
 html-tools@1.0.11
 htmljs@1.0.11
@@ -43,7 +49,9 @@ id-map@1.0.9
 insecure@1.0.7
 jquery@1.11.10
 launch-screen@1.1.1
+less@2.7.9
 livedata@1.0.18
+localstorage@1.0.12
 logging@1.1.17
 mdg:validated-method@1.1.0
 mdg:validation-error@0.2.0
@@ -60,6 +68,8 @@ modules-runtime@0.7.9
 mongo@1.1.15
 mongo-id@1.0.6
 npm-mongo@2.2.16_1
+oauth@1.1.13
+oauth2@1.1.11
 observe-sequence@1.0.15
 ordered-dict@1.0.9
 promise@0.8.8
@@ -71,6 +81,7 @@ reactive-var@1.0.11
 reload@1.1.11
 retry@1.0.9
 routepolicy@1.0.12
+service-configuration@1.0.11
 session@1.1.7
 shell-server@0.2.3
 spacebars@1.0.13

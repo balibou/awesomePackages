@@ -1,8 +1,9 @@
+/* global Meteor:true */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import AccountsUIWrapper from '../components/AccountsUIWrapper';
+import AccountsUIWrapper from '../components/AccountsUIWrapper'
 
-const AppNavigation = () => (
+const AppNavigation = ({userReady}) => (
   <nav className='nav'>
     <div className='nav-left'>
       <div className='nav-item'>
@@ -11,10 +12,17 @@ const AppNavigation = () => (
     </div>
     <div className='nav-right'>
       <div className='nav-item'>
-        <AccountsUIWrapper />
+        {userReady
+          ? <a className='nav-item' onClick={() => Meteor.logout()}>Logout</a>
+          : <AccountsUIWrapper />
+        }
       </div>
     </div>
   </nav>
 )
+
+AppNavigation.propTypes = {
+  userReady: React.PropTypes.bool
+}
 
 export default AppNavigation

@@ -16,7 +16,7 @@ Meteor.methods({
     const rootUrl = Meteor.absoluteUrl()
     emailData.unsubscribeUrl = `${rootUrl}unsubscribe/${id}`
     Email.send({
-      to: 'benjamin.cherion@gmail.com',
+      to,
       from: 'support@awesomepackages.com',
       subject: 'Welcome to AwesomePackages !',
       html: SSR.render('htmlEmail', emailData)
